@@ -7,11 +7,35 @@ use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductController;
 
+
+//MY OWN ENQUIRY ROUTES
+
+Route::get('/enquiry', [EnquiryController::class, 'create'])->name('enquiry.form');
+Route::post('/enquiry', [EnquiryController::class, 'store'])->name('enquiry.submit');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 */
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

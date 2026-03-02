@@ -19,12 +19,13 @@
 </head>
 <body>
     @include('partials.navbar')
+    @include('partials.topenquire')
 
     <main>
         @yield('content')
     </main>
 
-    @include('partials.footer')
+    @include('partials.lowenquire')
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

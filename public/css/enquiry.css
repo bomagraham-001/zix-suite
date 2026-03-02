@@ -1,0 +1,403 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+/* ================= HERO BANNER EXACT MATCH ================= */
+
+.about-banner{
+    position: relative;
+    width: 100%;
+    height: 480px; /* matches figma height feel */
+    min-height: 440px;
+
+    background-image: url("../images/enquiry-banner.png"); /* adjust if needed */
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-banner::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.60);
+    z-index: 1;
+}
+
+.banner-overlay{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.banner-content{
+    max-width: 760px;
+}
+
+/* EXACT FIGMA HEADING STYLE */
+.hero-title{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 56px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0 0 16px;
+}
+
+/* EXACT FIGMA SUBTITLE STYLE */
+.hero-subtitle{
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.75);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+    .about-banner{
+        height: 420px;
+    }
+
+    .hero-title{
+        font-size: 42px;
+        letter-spacing: 4px;
+    }
+
+    .hero-subtitle{
+        font-size: 15px;
+    }
+}
+
+
+/* ================= FORM SECTION ================= */
+
+.enquiry-page {
+  width: 100%;
+  padding: 70px 0 0;
+}
+
+.enquiry-wrap {
+  width: min(980px, 86vw);
+  margin: 0 auto;
+}
+
+.enquiry-intro {
+  margin: 0 0 26px;
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: #111;
+  max-width: 760px;
+}
+
+.enquiry-form {
+  width: 100%;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 28px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-full {
+  margin-top: 18px;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #111;
+}
+
+.optional {
+  font-weight: 500;
+  color: #666;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #bdbdbd;
+  background: #fff;
+  border-radius: 0;
+  font-size: 12px;
+  color: #111;
+  outline: none;
+}
+
+input,
+select {
+  height: 40px;
+  padding: 0 12px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9a9a9a;
+}
+
+textarea {
+  height: 170px;
+  padding: 12px;
+  resize: none;
+  line-height: 1.4;
+}
+
+.select-wrap {
+  position: relative;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+.select-wrap::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  opacity: 0.85;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24'%3E%3Cpath fill='%23111' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}
+
+.submit-btn {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 56px;
+  border: 0;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  opacity: 0.92;
+}
+
+@media (max-width: 760px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .enquiry-wrap {
+    width: min(980px, 92vw);
+  }
+}
+
+/* ================= FOOTER CSS  ================= */
+
+.site-footer{
+  background: #f5f5f5;
+  padding-top: 70px;
+  color: #111;
+}
+
+.footer-inner{
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top{
+  display: grid;
+  grid-template-columns: 1.2fr 0.7fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Brand */
+.footer-brand .brand-row{
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.brand-logo{
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+}
+
+.brand-name{
+  font-size: 16px;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.brand-desc{
+  margin-top: 28px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  max-width: 520px;
+}
+
+/* Links */
+.footer-links{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.footer-links a{
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-links a:hover{
+  opacity: 0.75;
+}
+
+/* Contact */
+.footer-contact h4{
+  margin: 0 0 18px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.contact-phone{
+  margin: 0 0 22px;
+  font-size: 16px;
+  color: #111;
+}
+
+.contact-address{
+  margin: 0 0 22px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  max-width: 360px;
+}
+
+/* Social row */
+.footer-social{
+  display: flex;
+  gap: 70px;
+  margin-top: 40px;
+  padding-bottom: 60px;
+}
+
+.footer-social a{
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-social a:hover{
+  opacity: 0.75;
+}
+
+/* Bottom bar */
+.footer-bottom{
+  background: #e9e9e9;
+  padding: 22px 0;
+}
+
+.footer-bottom-inner{
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+copyright,
+.copyright{
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.footer-legal{
+  display: flex;
+  gap: 28px;
+}
+
+.footer-legal a{
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.footer-legal a:hover{
+  color: #111;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .footer-top{
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-social{
+    flex-wrap: wrap;
+    gap: 24px 40px;
+  }
+
+  .footer-bottom-inner{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
