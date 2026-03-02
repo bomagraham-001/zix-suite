@@ -1,0 +1,95 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+
+
+p{
+    font-size: 20px;
+    color: #969494;
+}
+
+.banner{
+
+/* background:url('images/626a5845bd1a2a2a825a2a7fe9661798.png') center/cover no-repeat; */
+background-image: linear-gradient(rgba(14, 9, 9, 0.7),rgba(39,19,8,0.7)), url(../images/banner.png);
+background-position: top;
+
+background-size: cover;
+
+height: 60vh;
+
+
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+.banner-overlay{
+/* background:linear-gradient(); */
+/* background: ( linear-gradient(170,170,170,0.5), rgba(0,0,0,0.7)),; */
+padding:40px;
+text-align:center;
+color:white;
+}
+
+.banner-overlay h1{
+
+font: size 48px;
+margin-bottom:10px;
+}
+
+.gallery {
+    padding: 100px 10%;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-auto-rows: 120px; /* base row height */
+    gap: 20px;
+}
+
+/* Images fill their grid area */
+.gallery-item img {
+    width: 350px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+}
+.gallery-item {
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* Tall and short images */
+.tall {
+    grid-row: span 4; /* tall = 3 rows */
+}
+
+.short {
+    grid-row: span 2; /* short = 2 rows */
+}
+
+
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr); /* switch to 2 columns */
+        grid-auto-rows: 120px; /* smaller row height for mobile */
+    }
+
+    .gallery {
+        padding: 20px 3%; /* smaller padding for mobile */
+    }
+
+
+    .gallery-item img{
+    width:200px ;
+}
+}
+

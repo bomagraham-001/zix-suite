@@ -51,4 +51,8 @@ class HomeController extends Controller
 
         return view('pages.home', compact('collections', 'processSteps', 'signatureStyles', 'testimonials'));
     }
+
+    public function gallery(){
+        return view('gallery');
+    }
 }

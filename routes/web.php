@@ -22,7 +22,7 @@ Route::prefix('shop')->name('shop.')->group(function () {
 Route::get('/products/{product}', [ProductController::class, 'show'])
     ->name('products.show');
 
-Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+// Route::get('/gallery', [GalleryController::class, 'gallery'])->name('gallery');
 
 Route::view('/about', 'pages.about')->name('about');
 
@@ -52,3 +52,5 @@ Route::get('/laundry', function () {
 Route::fallback(function () {
     return view('errors.404');
 });
+
+Route::get('/gallery', [GalleryController::class, 'gallery'])->name('gallery');

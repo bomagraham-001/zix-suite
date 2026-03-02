@@ -14,6 +14,12 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <head>
+    <title>@yield('title')</title>
+    <meta name="description" content="@yield('description')">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
     @stack('styles')
 </head>
 <body>
@@ -24,6 +30,9 @@
     </main>
 
     @include('partials.footer')
+
+
+    
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
