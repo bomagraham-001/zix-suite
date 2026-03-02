@@ -25,7 +25,7 @@
     <nav class="navbar__inner">
         <ul class="navbar__links navbar__links--left">
             <li><a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
-            <li><a href="{{ route('shop.index') }}" class="nav-link {{ request()->routeIs('shop.index') ? 'active' : '' }}">Shop</a></li>
+            <li><a href="{{ route('shop_page') }}" class="nav-link {{ request()->routeIs('shop.index') ? 'active' : '' }}">Shop</a></li>
             <li><a href="{{ route('gallery') }}" class="nav-link {{ request()->routeIs('gallery') ? 'active' : '' }}">Gallery</a></li>
             <li><a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
         </ul>

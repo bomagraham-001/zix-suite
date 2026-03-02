@@ -19,8 +19,9 @@ Route::prefix('shop')->name('shop.')->group(function () {
     Route::get('/', [ShopController::class, 'index'])->name('index');
     Route::get('/{product}', [ShopController::class, 'show'])->name('show');
 });
-Route::get('/products/{product}', [ProductController::class, 'show'])
-    ->name('products.show');
+
+// Route::get('/products/{product}', [ProductController::class, 'show'])
+//     ->name('products.show');
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
@@ -52,3 +53,7 @@ Route::get('/laundry', function () {
 Route::fallback(function () {
     return view('errors.404');
 });
+
+Route::get('/shop_page', [ShopController::class, 'shop_page'])->name('shop_page');
+
+Route::get('product', [ProductController::class, 'product'])->name('product_page');

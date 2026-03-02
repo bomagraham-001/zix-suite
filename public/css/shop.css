@@ -1,0 +1,364 @@
+/* ================= GLOBAL STYLES ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #111;
+}
+
+.shop-about-banner {
+    height: 300px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.76)), url("/collections/banner.png");
+    background-position: top;
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 110px;
+    margin-top: calc(var(--nav-h) * -1);
+}
+
+.shop-banner-overlay {
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+.shop-banner-overlay h1 {
+    font: size 38px;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================= HEADER ================= */
+
+.shop-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.shop-category-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.shop-category-nav a {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #555;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.shop-category-nav a:hover {
+    color: #000;
+}
+
+.shop-category-nav a.shop-active {
+    color: #000;
+}
+
+.shop-category-nav a.shop-active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+}
+
+/* ================= ACTION ICONS ================= */
+
+.shop-actions {
+    display: flex;
+    gap: 25px;
+}
+
+.shop-action-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #000;
+    transition: opacity 0.3s ease;
+}
+
+.shop-action-link i {
+    font-size: 15px;
+}
+
+.shop-action-link:hover {
+    opacity: 0.6;
+}
+
+/* ================= PRODUCT GRID ================= */
+
+.shop-product-section {
+    padding: 50px 60px;
+}
+
+.shop-product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 30px;
+}
+
+/* ================= PRODUCT CARD ================= */
+
+.shop-product-card {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.shop-product-card:hover {
+    transform: translateY(-5px);
+}
+
+.shop-product-image {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.shop-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shop-product-info {
+    margin-top: 15px;
+}
+
+.shop-product-info h3 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.shop-product-info p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}
+
+/* ================= PAGINATION ================= */
+
+.shop-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 40px 0 80px 0;
+}
+
+.shop-pagination a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}
+
+.shop-pagination .shop-page {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.shop-pagination .shop-page.shop-active {
+    background-color: #000;
+    color: #fff;
+}
+
+.shop-pagination .shop-prev,
+.shop-pagination .shop-next {
+    padding: 6px 10px;
+}
+
+/* ================= RESPONSIVE (ADD TO BOTTOM) ================= */
+
+/* Medium (tablet) */
+@media (max-width: 992px) {
+  .shop-about-banner{
+    padding: 0 28px;
+    height: 45vh;
+  }
+
+  .shop-banner-overlay h1{
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  .shop-banner-overlay p{
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .shop-top-bar{
+    padding: 18px 28px;
+  }
+
+  .shop-category-nav{
+    gap: 16px;
+    flex-wrap: wrap; /* allows it to fit without breaking layout */
+  }
+
+  .shop-product-section{
+    padding: 30px 28px;
+  }
+
+  .shop-product-grid{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 16px;
+  }
+
+  .shop-product-image{
+    height: 250px;
+  }
+
+  .shop-pagination{
+    padding: 30px 0 60px 0;
+    gap: 12px;
+  }
+
+  .shop-pagination a{
+    font-size: 13px;
+  }
+
+  .shop-pagination .shop-page{
+    width: 32px;
+    height: 32px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .shop-about-banner{
+    padding: 0 18px;
+    height: 38vh;
+    margin-top: 0; /* safer on mobile */
+  }
+
+  .shop-banner-overlay{
+    padding: 18px 10px;
+  }
+
+  .shop-banner-overlay h1{
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .shop-banner-overlay p{
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  /* Top bar like your mobile UI: left "ALL COLLECTION", right Filter/Sort */
+  .shop-top-bar{
+    padding: 16px 18px;
+  }
+
+  /* Hide other categories, show only the active one */
+  .shop-category-nav{
+    gap: 0;
+  }
+
+  .shop-category-nav a{
+    display: none;
+  }
+
+  .shop-category-nav a.shop-active{
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding-bottom: 6px;
+  }
+
+  .shop-actions{
+    gap: 14px;
+  }
+
+  .shop-action-link{
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .shop-action-link span{
+    display: inline-block;
+  }
+
+  /* Product grid: 2 columns like your screenshot */
+  .shop-product-section{
+    padding: 18px 18px 28px 18px;
+  }
+
+  .shop-product-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 14px;
+  }
+
+  .shop-product-image{
+    height: 210px;
+  }
+
+  .shop-product-info{
+    margin-top: 10px;
+  }
+
+  .shop-product-info h3{
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+  }
+
+  .shop-product-info p{
+    font-size: 12px;
+  }
+
+  /* Pagination sizing/spacing like mobile */
+  .shop-pagination{
+    padding: 18px 0 40px 0;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .shop-pagination a{
+    font-size: 12px;
+  }
+
+  .shop-pagination .shop-page{
+    width: 30px;
+    height: 30px;
+  }
+
+  .shop-pagination .shop-prev,
+  .shop-pagination .shop-next{
+    padding: 6px 8px;
+  }
+}

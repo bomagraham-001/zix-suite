@@ -1,116 +1,132 @@
 @extends('layouts.app')
 
-@section('title', $product->name . ' — The Ten Clothings')
-
 @section('content')
 
-<div class="product-detail">
-    <div class="product-detail__inner">
+  <div class="product-page">
 
-        <!-- Images -->
-        <div class="product-detail__gallery">
-            <div class="product-detail__main-image">
-                @if($product->image)
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
-                @else
-                    <div class="product-detail__placeholder" style="background: {{ $product->placeholder_color }}; position:relative; width:100%; aspect-ratio:3/4;">
-                        <div class="garment-silhouette"></div>
-                    </div>
-                @endif
-            </div>
-        </div>
-
-        <!-- Info -->
-        <div class="product-detail__info">
-            <span class="product-card__category">{{ $product->category->name ?? 'Menswear' }}</span>
-            <h1 class="product-detail__name">{{ $product->name }}</h1>
-            <p class="product-detail__price">₦{{ number_format($product->price) }}</p>
-
-            <div class="product-detail__divider"></div>
-
-            <div class="product-detail__description">
-                <p>{{ $product->description }}</p>
-            </div>
-
-            <div class="product-detail__features">
-                <div class="product-feature">
-                    <span class="product-feature__icon">✦</span>
-                    <span>Handcrafted by master tailors</span>
-                </div>
-                <div class="product-feature">
-                    <span class="product-feature__icon">✦</span>
-                    <span>Premium fabric selection</span>
-                </div>
-                <div class="product-feature">
-                    <span class="product-feature__icon">✦</span>
-                    <span>Made-to-measure available</span>
-                </div>
-                <div class="product-feature">
-                    <span class="product-feature__icon">✦</span>
-                    <span>Nationwide delivery</span>
-                </div>
-            </div>
-
-            <div class="product-detail__cta">
-                <a href="{{ route('enquiry', ['product' => $product->slug]) }}" class="btn btn--primary btn--full">Make Enquiry</a>
-                <a href="{{ route('shop') }}" class="btn btn--secondary btn--full" style="margin-top: 1rem;">← Back to Collection</a>
-            </div>
-        </div>
+    <!-- Breadcrumb -->
+    <div class="product-breadcrumb">
+      <a href="{{route('home')}}">HOME</a>
+      <span class="product-sep">/</span>
+      <a href="{{route('shop_page')}}">SHOP</a>
+      <span class="product-sep">/</span>
+      <span class="product-current">EMBROIDERED AGBADA</span>
     </div>
 
-    <!-- Related Products -->
-    @if($related->count())
-    <section class="related-products">
-        <div class="related-products__header">
-            <span class="section-eyebrow">— You May Also Like —</span>
+    <!-- Main Product Layout -->
+    <section class="product-layout">
+
+      <!-- Left: Images -->
+      <div class="product-gallery">
+        <div class="product-main-image">
+          <img src="{{asset('collections/kaftan.png')}}" alt="Embroidered Agbada">
         </div>
-        <div class="related-products__grid">
-            @foreach($related as $item)
-            <article class="product-card">
-                <a href="{{ route('product', $item->slug) }}" class="product-card__image-link">
-                    <div class="product-card__image">
-                        @if($item->image)
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}" loading="lazy">
-                        @else
-                            <div class="product-card__placeholder" style="background: {{ $item->placeholder_color }}">
-                                <div class="garment-silhouette"></div>
-                            </div>
-                        @endif
-                        <div class="product-card__overlay"><span>View Details</span></div>
-                    </div>
-                </a>
-                <div class="product-card__info">
-                    <h3 class="product-card__name"><a href="{{ route('product', $item->slug) }}">{{ $item->name }}</a></h3>
-                    <p class="product-card__price">₦{{ number_format($item->price) }}</p>
-                </div>
-            </article>
-            @endforeach
+
+        <div class="product-thumbs">
+          <button class="product-thumb product-thumb-active" type="button" aria-label="Thumbnail 1">
+            <img src="{{asset('collections/kaftan.png')}}" alt="Thumb 1">
+          </button>
+          <button class="product-thumb" type="button" aria-label="Thumbnail 2">
+            <img src="{{asset('collections/kaftan.png')}}" alt="Thumb 2">
+          </button>
+          <button class="product-thumb" type="button" aria-label="Thumbnail 3">
+            <img src="{{asset('collections/kaftan.png')}}" alt="Thumb 3">
+          </button>
+          <button class="product-thumb" type="button" aria-label="Thumbnail 4">
+            <img src="{{asset('collections/kaftan.png')}}" alt="Thumb 4">
+          </button>
         </div>
+      </div>
+
+      <!-- Right: Product Info -->
+      <div class="product-details">
+        <h1 class="product-title">EMBROIDERED AGBADA</h1>
+        <div class="product-price">₦180,000</div>
+
+        <div class="product-sizes">
+          <label class="product-size">
+            <input type="radio" name="size" checked>
+            <span>M (40–42)</span>
+          </label>
+
+          <label class="product-size">
+            <input type="radio" name="size">
+            <span>L (42–44)</span>
+          </label>
+
+          <label class="product-size">
+            <input type="radio" name="size">
+            <span>XL (44–46)</span>
+          </label>
+
+          <label class="product-size">
+            <input type="radio" name="size">
+            <span>XXL (46–48)</span>
+          </label>
+
+          <label class="product-size">
+            <input type="radio" name="size">
+            <span>3XL (48–50+)</span>
+          </label>
+        </div>
+
+        <div class="product-meta">
+          <a href="#" class="product-meta-link">SIZE GUIDE</a>
+          <span class="product-dot">•</span>
+          <span class="product-fabric">FABRIC: CASHMERE</span>
+        </div>
+
+        <div class="product-actions">
+          <a class="product-btn product-btn-primary" href="/cart/add">ADD TO CART</a>
+          <a class="product-btn product-btn-outline" href="/custom-order">CUSTOM ORDER</a>
+        </div>
+
+        <div class="product-accordion">
+          <button class="product-acc-row" type="button">
+            <span>DESCRIPTION</span>
+            <span class="product-plus">+</span>
+          </button>
+
+          <button class="product-acc-row" type="button">
+            <span>REVIEWS (5)</span>
+            <span class="product-plus">+</span>
+          </button>
+        </div>
+      </div>
+
     </section>
-    @endif
-</div>
+
+  </div> <!-- /product-page -->
+
+  <!-- YOU MAY ALSO LIKE -->
+  <section class="product-related-wrap">
+    <h2 class="product-related-title">YOU MAY ALSO LIKE</h2>
+
+    <div class="product-related-grid">
+      <a href="/product/royal-agbada" class="product-related-card">
+        <img src="{{asset('collections/kaftan.png')}}" alt="Royal Agbada">
+        <div class="product-related-info">
+          <h3>ROYAL AGBADA</h3>
+          <p>₦150,000</p>
+        </div>
+      </a>
+
+      <a href="/product/statement-grand-agbada" class="product-related-card">
+        <img src="{{asset('collections/kaftan.png')}}" alt="Statement Grand Agbada">
+        <div class="product-related-info">
+          <h3>STATEMENT GRAND AGBADA</h3>
+          <p>₦160,000</p>
+        </div>
+      </a>
+
+      <a href="/product/executive-command-set" class="product-related-card">
+        <img src="{{asset('collections/kaftan.png')}}" alt="Executive Command Set">
+        <div class="product-related-info">
+          <h3>EXECUTIVE COMMAND SET</h3>
+          <p>₦120,000</p>
+        </div>
+      </a>
+    </div>
+  </section>
 
 @endsection
-
-@push('styles')
-<style>
-.product-detail { padding: calc(var(--nav-height) + 3rem) 4rem 6rem; }
-.product-detail__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-.product-detail__name { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; margin: 0.5rem 0 1rem; }
-.product-detail__price { font-family: var(--font-display); font-size: 2rem; color: var(--color-gold-dark); margin-bottom: 2rem; }
-.product-detail__divider { height: 1px; background: rgba(0,0,0,0.1); margin-bottom: 2rem; }
-.product-detail__description p { font-size: 0.88rem; color: var(--color-mid); line-height: 1.9; margin-bottom: 2rem; }
-.product-detail__features { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2.5rem; }
-.product-feature { display: flex; align-items: center; gap: 0.75rem; font-size: 0.82rem; color: var(--color-mid); }
-.product-feature__icon { color: var(--color-gold); font-size: 0.6rem; }
-.related-products { padding: 6rem 4rem; max-width: 1300px; margin: 0 auto; }
-.related-products__header { text-align: center; margin-bottom: 3rem; }
-.related-products__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-@media (max-width: 768px) {
-    .product-detail { padding: calc(var(--nav-height) + 2rem) 1.5rem 4rem; }
-    .product-detail__inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    .related-products { padding: 4rem 1.5rem; }
-    .related-products__grid { grid-template-columns: 1fr 1fr; }
-}
-</style>
-@endpush
