@@ -391,7 +391,7 @@ p { line-height: 1.8; }
 
 .hero-image img {
     margin-top: 50px;
-    height: 92vh;
+    height: 90vh;
     object-fit: contain;
 }
 
@@ -1183,7 +1183,7 @@ p { line-height: 1.8; }
 .footer__enquiry {
     position: relative;
     overflow: hidden;
-    background: url('/images/enquiry.png') center / cover no-repeat;
+    background: url('/images/enquiry.png') center / cover no-repeat ;
 }
 .footer__enquiry-content {
     display: grid;
@@ -1194,7 +1194,7 @@ p { line-height: 1.8; }
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7); /* control darkness here */
+    background: rgba(0, 0, 0, 0.884); /* control darkness here */
     z-index: 1;
 }
 .footer__enquiry-left {

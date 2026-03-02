@@ -6,7 +6,6 @@
 @section('content')
 
     {{-- HERO --}}
-    <!-- HERO -->
 <section class="hero">
 
     <div class="hero-content">

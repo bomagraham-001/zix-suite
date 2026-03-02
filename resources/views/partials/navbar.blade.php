@@ -33,14 +33,14 @@
         <a href="{{ route('home') }}" class="navbar__logo">
             <div class="logo-mark">
                 <span class="logo-mark__number"><img src="{{ asset('images/Group 1.png') }}" alt="The Ten Clothings Logo"></span>
-                <span class="logo-mark__text">THE TEN<br>CLOTHINGS</span>
+                <span class="logo-mark__text">TOP TEN<br>CLOTHINGS</span>
             </div>
         </a>
 
         <ul class="navbar__links navbar__links--right">
             <li><a href="{{ route('enquiry.index') }}" class="nav-link">Enquiries</a></li>
             <li><a href="{{ route('laundry') }}" class="nav-link">Laundrry</a></li>
-            <li><a href="{{ route('Account') }}" class="nav-link">Account</a></li>
+            <li><a href="{{ route('Account') }}" class="nav-link {{ request()->routeIs('Account') ? 'active' : '' }}">Account</a></li>
             <li><a href="{{ route('cart.index') }}" class="nav-link">Cart</a></li>
         </ul>
 
