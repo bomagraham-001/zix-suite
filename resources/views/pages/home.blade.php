@@ -17,7 +17,8 @@
             Designed for presence. Tailored for confidence
         </p>
 
-        <a href="#" class="btn">Shop Now</a>
+        <a href="{{route('shop_page')}}" class="btn">Shop Now</a>
+        <div class="hero__stick"></div>
     </div>
 
     <div class="hero-image">
