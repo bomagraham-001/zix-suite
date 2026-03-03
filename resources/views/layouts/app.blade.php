@@ -17,10 +17,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/account.css') }}">
-    <link rel="stylesheet" href="{{asset('css/app.css') }}">
     <link rel="stylesheet" href="{{asset('css/shop.css')}}">
     <link rel="stylesheet" href="{{asset('css/product.css')}}">
-
+     <link rel="stylesheet" href="{{ asset('CSS/enquiry.css') }}">
     @stack('styles')
 </head>
 <body>

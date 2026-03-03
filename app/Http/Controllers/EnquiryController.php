@@ -36,4 +36,33 @@ class EnquiryController extends Controller
         return redirect()->route('enquiry')
             ->with('success', 'Thank you for your enquiry, ' . $validated['first_name'] . '! Our team will be in touch within 24–48 hours.');
     }
+
+
+    public function create()
+    {
+        return view('enquiry');
+    }
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'fullname' => ['required', 'string', 'max:255'],
+            'email'    => ['required', 'email', 'max:255'],
+            'phone'    => ['required', 'string', 'max:30'],
+            'location' => ['required', 'string', 'max:255'],
+            'garment'  => ['required', 'string', 'max:100'],
+            'details'  => ['nullable', 'string', 'max:2000'],
+        ]);
+
+        // For now, just return success (you can save to DB or send mail later)
+        return back()->with('success', 'Enquiry submitted successfully!');
+    }
+
+
+
+
+
+
+
+
 }
