@@ -66,7 +66,6 @@
             <img src="{{ asset('images/pc.png') }}">
         </div>
 
-
         <div class="gallery-item tall">
             <img src="{{ asset('images/qw.png') }}">
         </div>
