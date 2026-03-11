@@ -5,15 +5,15 @@
 
 @section('content')
 
-  {{-- Google Font --}}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  {{-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  {{-- Your CSS --}}
+
 
 </head>
-<body>
+<body> --}}
 
  <!-- ================= HERO BANNER ================= -->
 <section class="about-banner">
@@ -88,67 +88,5 @@
 
     </section>
   </main>
-
-  <!-- ================= Footer ================= -->
-  <footer class="site-footer">
-
-    <div class="footer-inner">
-
-      <div class="footer-top">
-
-        <!-- Left -->
-        <div class="footer-brand">
-          <div class="brand-row">
-            <img src="{{ asset('images/footer-logo.jpeg') }}" alt="Top Ten Clothing" class="brand-logo">
-            <div class="brand-name">
-            </div>
-          </div>
-
-          <p class="brand-desc">
-            Known For Exceptional Tailoring And Attention To Detail, We Create
-            Pieces That Reflect Confidence, Sophistication, And Timeless Style.
-          </p>
-        </div>
-
-        <!-- Middle -->
-        <div class="footer-links">
-          <a href="#">HOME</a>
-          <a href="#">SHOP</a>
-          <a href="#">GALLERY</a>
-          <a href="#">ABOUT</a>
-        </div>
-
-        <!-- Right -->
-        <div class="footer-contact">
-          <h4>CONTACT US</h4>
-          <p>09096052818</p>
-          <p>No 4 King Perekule Street GRA Phase 2, Port Harcourt 500272</p>
-          <p>No 4 King Perekule Street GRA Phase 2, Port Harcourt 500272</p>
-        </div>
-
-      </div>
-
-      <!-- Social -->
-      <div class="footer-social">
-        <a href="#">INSTAGRAM</a>
-        <a href="#">FACEBOOK</a>
-        <a href="#">TIK TOK</a>
-        <a href="#">THREAD</a>
-      </div>
-
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <p>2025 TOP TEN CLOTHINGS. ALL RIGHTS RESERVED.</p>
-        <div class="footer-legal">
-          <a href="#">PRIVACY POLICY</a>
-          <a href="#">TERMS AND CONDITION</a>
-        </div>
-      </div>
-    </div>
-
-  </footer>
 
 @endsection

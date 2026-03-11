@@ -25,7 +25,7 @@
     <nav class="navbar__inner">
         <ul class="navbar__links navbar__links--left">
             <li><a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
-            <li><a href="{{ route('shop_page') }}" class="nav-link {{ request()->routeIs('shop.index') ? 'active' : '' }}">Shop</a></li>
+            <li><a href="{{ route('shop_page') }}" class="nav-link {{ request()->routeIs('shop_page') ? 'active' : '' }}">Shop</a></li>
             <li><a href="{{ route('gallery') }}" class="nav-link {{ request()->routeIs('gallery') ? 'active' : '' }}">Gallery</a></li>
             <li><a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">About</a></li>
         </ul>
@@ -38,10 +38,10 @@
         </a>
 
         <ul class="navbar__links navbar__links--right">
-            <li><a href="{{ route('enquiry.index') }}" class="nav-link">Enquiries</a></li>
-            <li><a href="{{ route('laundry') }}" class="nav-link">Laundrry</a></li>
+            <li><a href="{{ route('enquiry.index') }}" class="nav-link {{ request()->routeIs('enquiry.index') ? 'active' : '' }}">Enquiries</a></li>
+            <li><a href="{{ route('laundry') }}" class="nav-link {{ request()->routeIs('laundry') ? 'active' : '' }}">Laundry</a></li>
             <li><a href="{{ route('Account') }}" class="nav-link {{ request()->routeIs('Account') ? 'active' : '' }}">Account</a></li>
-            <li><a href="{{ route('cart.index') }}" class="nav-link">Cart</a></li>
+            <li><a href="{{ route('cart.index') }}" class="nav-link {{ request()->routeIs('cart.index') ? 'active' : '' }}">Cart</a></li>
         </ul>
 
         <button class="navbar__hamburger" aria-label="Menu" id="menuToggle">
@@ -57,6 +57,9 @@
             <li><a href="{{ route('gallery') }}">Gallery</a></li>
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('enquiry.index') }}">Enquiries</a></li>
+            <li><a href="{{ route('laundry') }}">Laundry</a></li>
+            <li><a href="{{ route('Account') }}">Account</a></li>
+            <li><a href="{{ route('cart.index') }}">Cart</a></li>
         </ul>
     </div>
 </header>

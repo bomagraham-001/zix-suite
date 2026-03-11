@@ -121,7 +121,7 @@ a {
 .shop-product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px 30px;
+    gap: 20px 10px;
 }
 
 /* ================= PRODUCT CARD ================= */

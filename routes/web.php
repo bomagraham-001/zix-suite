@@ -6,12 +6,17 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\LaundryController;
 
 
 //MY OWN ENQUIRY ROUTES
 
 Route::get('/enquiry', [EnquiryController::class, 'create'])->name('enquiry.form');
 Route::post('/enquiry', [EnquiryController::class, 'store'])->name('enquiry.submit');
+
+
+//LAUNDRY ROUTES
+Route::get('/laundry', [LaundryController::class, 'index'])->name('laundry.index');
 
 
 
@@ -78,4 +83,7 @@ Route::fallback(function () {
     return view('errors.404');
 });
 
+Route::get('/shop_page', [ShopController::class, 'shop_page'])->name('shop_page');
+
+Route::get('product', [ProductController::class, 'product'])->name('product_page');
 Route::get('/gallery', [GalleryController::class, 'gallery'])->name('gallery');

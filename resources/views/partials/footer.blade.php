@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="footer__main">
+    {{-- <div class="footer__main">
         <div class="footer__brand">
             <div class="logo-mark logo-mark--light">
                 <span class="logo-mark__number"><img src="{{ asset('images/Group 1 (1).png') }}" alt="The Ten Clothings Logo"></span>
@@ -49,5 +49,6 @@
                 <p><a href="mailto:hello@thetencloths.com">hello@thetencloths.com</a></p>
             </address>
         </div>
-    </div>
+
+    </div> --}}
 </footer>

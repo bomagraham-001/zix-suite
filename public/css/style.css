@@ -51,7 +51,7 @@ margin-bottom:10px;
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
     grid-auto-rows: 120px; /* base row height */
-    gap: 20px;
+    gap: 12px;
 }
 
 /* Images fill their grid area */

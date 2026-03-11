@@ -14,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/account.css') }}">
@@ -21,10 +24,9 @@
     <link rel="stylesheet" href="{{asset('css/product.css')}}">
      <link rel="stylesheet" href="{{ asset('CSS/enquiry.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <head>
-    <title>@yield('title')</title>
-    <meta name="description" content="@yield('description')">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset( 'css/laundry.css') }}">
+    <head>
 </head>
     @stack('styles')
 </head>
@@ -35,13 +37,33 @@
         @yield('content')
     </main>
 
-    @include('partials.footer')
+    {{-- @include('partials.footer') --}}
+
+    @include('partials.footerbottom')
 
 
 
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+    var swiper = new Swiper(".heroSwiper", {
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        effect: "slide", // you can change to "fade"
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
     @stack('scripts')
 </body>
 </html>

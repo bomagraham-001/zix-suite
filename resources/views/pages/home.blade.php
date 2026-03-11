@@ -8,25 +8,76 @@
     {{-- HERO --}}
 <section class="hero">
 
-    <div class="hero-content">
+    <div class="swiper heroSwiper">
+        <div class="swiper-wrapper">
 
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+                <div class="hero-content">
+                    <h1>WEAR YOUR ROYALTY</h1>
+                    <p class="hero-text">
+                        Designed for presence. Tailored for confidence
+                    </p>
+                    <a href="{{ route('shop_page') }}" class="btn">Shop Now</a>
+                </div>
 
-        <h1>WEAR YOUR ROYALTY</h1>
+                <div class="hero-image">
+                    <img src="{{ asset('images/hero.png') }}" alt="Royal Outfit">
+                </div>
+            </div>
 
-        <p class="hero-text">
-            Designed for presence. Tailored for confidence
-        </p>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+                <div class="hero-content">
+                    <h1>YOUR DESIGN.YOUR FIT.</h1>
+                    <p class="hero-text">
+                        Luxury crafted for modern kings
+                    </p>
+                    <a href="{{ route('shop_page') }}" class="btn">START YOUR ORDER</a>
+                </div>
 
-        <a href="{{route('shop_page')}}" class="btn">Shop Now</a>
-        <div class="hero__stick"></div>
-    </div>
+                <div class="hero-image">
+                    <img src="{{ asset('images/bgsenator.png') }}" alt="Royal Outfit">
+                </div>
+            </div>
 
-    <div class="hero-image">
-        <img src="{{ asset('images/hero.png') }}" alt="Royal Outfit">
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="hero-content">
+                        <h1>CRAFTED FOR YOU</h1>
+                        <p class="hero-text">
+                            Where tradition meets contemporary style
+                        </p>
+                        <a href="{{ route('shop_page') }}" class="btn">Discover</a>
+                    </div>
+
+                    <div class="hero-image">
+                        <img src="{{ asset('images/bgsenator1.png') }}" alt="Royal Outfit">
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <div class="hero-content">
+                        <h1>CRAFTED FOR KINGS</h1>
+                        <p class="hero-text">
+                            Premium Nigerian menswear, perfected
+                        </p>
+                        <a href="{{ route('shop_page') }}" class="btn">Shop Now</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="{{ asset('images/iron.png') }}" alt="Royal Outfit">
+                    </div>
+                </div>
+
+        </div>
+
+        <!-- Pagination Dots -->
+        <div class="swiper-pagination"></div>
+
     </div>
 
 </section>
-
 
      <!-- QUOTE SECTION -->
 <section class="quote-section">
@@ -210,5 +261,5 @@
 
 </section>
 
-
+@include("partials.footer")
 @endsection
