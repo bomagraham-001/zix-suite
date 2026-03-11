@@ -9,25 +9,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LaundryController;
 
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-*/
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
-
-Route::prefix('shop')->name('shop.')->group(function () {
-    Route::get('/', [ShopController::class, 'index'])->name('index');
-    Route::get('/{product}', [ShopController::class, 'show'])->name('show');
-});
-
-Route::get('/shop_page', [ShopController::class, 'shop_page'])->name('shop_page');
-
-Route::get('product', [ProductController::class, 'product'])->name('product_page');
-Route::get('/gallery', [GalleryController::class, 'gallery'])->name('gallery');
-
 //ENQUIRY ROUTES
 
 Route::get('/enquiry', [EnquiryController::class, 'create'])->name('enquiry.form');
@@ -42,8 +23,34 @@ Route::get('/cart', function () {
 //LAUNDRY ROUTES
 Route::get('/laundry', [LaundryController::class, 'index'])->name('laundry.index');
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+*/
+
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::prefix('shop')->name('shop.')->group(function () {
+    Route::get('/', [ShopController::class, 'index'])->name('index');
+    Route::get('/{product}', [ShopController::class, 'show'])->name('show');
+});
+
+
 
 Route::view('/about', 'pages.about')->name('about');
+
+Route::prefix('enquiries')->name('enquiry.')->group(function () {
+    Route::get('/', [EnquiryController::class, 'index'])->name('index');
+    Route::post('/', [EnquiryController::class, 'submit'])
+        ->middleware('throttle:5,1')
+        ->name('submit');
+});
+
+Route::get('/search', function () {
+    return view('pages.search');
+})->name('search');
 
 Route::get('/account', function () {
     return view('pages.account');
@@ -60,3 +67,8 @@ Route::get('/laundry', function () {
 Route::fallback(function () {
     return view('errors.404');
 });
+
+Route::get('/shop_page', [ShopController::class, 'shop_page'])->name('shop_page');
+
+Route::get('product', [ProductController::class, 'product'])->name('product_page');
+Route::get('/gallery', [GalleryController::class, 'gallery'])->name('gallery');
