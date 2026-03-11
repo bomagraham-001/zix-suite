@@ -47,7 +47,7 @@ Route::prefix('shop')->name('shop.')->group(function () {
 // Route::get('/products/{product}', [ProductController::class, 'show'])
 //     ->name('products.show');
 
-Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+// Route::get('/gallery', [GalleryController::class, 'gallery'])->name('gallery');
 
 Route::view('/about', 'pages.about')->name('about');
 
@@ -78,6 +78,4 @@ Route::fallback(function () {
     return view('errors.404');
 });
 
-Route::get('/shop_page', [ShopController::class, 'shop_page'])->name('shop_page');
-
-Route::get('product', [ProductController::class, 'product'])->name('product_page');
+Route::get('/gallery', [GalleryController::class, 'gallery'])->name('gallery');

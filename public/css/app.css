@@ -1005,7 +1005,7 @@ p { line-height: 1.8; }
 /* =========================================
    GALLERY PAGE
    ========================================= */
-.gallery-section { padding: 5rem 4rem; }
+/* .gallery-section { padding: 5rem 4rem; }
 .gallery-section__filters {
     display: flex;
     gap: 0.5rem;
@@ -1073,7 +1073,7 @@ p { line-height: 1.8; }
     border: 1px solid rgba(255,255,255,0.3);
     transition: all var(--transition-base);
 }
-.gallery-item__zoom:hover { background: var(--color-gold); border-color: var(--color-gold); color: var(--color-black); }
+.gallery-item__zoom:hover { background: var(--color-gold); border-color: var(--color-gold); color: var(--color-black); } */
 
 /* Lightbox */
 .lightbox {
@@ -1256,7 +1256,7 @@ p { line-height: 1.8; }
     .footer__main { grid-template-columns: 1fr 1fr; }
     .about-story__inner { grid-template-columns: 1fr; gap: 3rem; }
     .enquiry-section__inner { grid-template-columns: 1fr; gap: 4rem; }
-    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    /* .gallery-grid { grid-template-columns: repeat(3, 1fr); } */
 }
 
 @media (max-width: 768px) {
@@ -1274,7 +1274,7 @@ p { line-height: 1.8; }
     .shop-section__inner { grid-template-columns: 1fr; }
     .shop-filters { display: none; }
     .products-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    /* .gallery-grid { grid-template-columns: repeat(2, 1fr); } */
     .footer__main { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 2rem; }
     .footer__enquiry-content { grid-template-columns: 1fr; }
     .footer__enquiry-right { display: none; }
@@ -1292,6 +1292,6 @@ p { line-height: 1.8; }
 @media (max-width: 480px) {
     .signature__grid { grid-template-columns: 1fr; }
     .products-grid { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr; }
-    .gallery-filter { font-size: 0.6rem; padding: 0.5rem 1rem; }
+    /* .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-filter { font-size: 0.6rem; padding: 0.5rem 1rem; } */
 }
