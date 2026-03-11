@@ -21,7 +21,7 @@
             <h3>Order History</h3>
 
             <div class="order-card">
-                <img src="{{ asset('images/agbada2 (1).png') }}">
+                <img src="{{ asset('images/agbada.png') }}">
                 <div>
                     <h4>Statement Grand Agbada</h4>
                     <p>₦120,000</p>

@@ -193,7 +193,7 @@
     <div class="products">
 
         <div class="product">
-            <img src="{{ asset('images/agbada2 (1).png') }}" alt="">
+            <img src="{{ asset('images/white-abada.png') }}" alt="">
             <h5>ROYAL AGBADA</h5>
             <p>₦150,000</p>
         </div>

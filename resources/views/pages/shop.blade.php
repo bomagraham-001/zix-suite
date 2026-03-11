@@ -182,5 +182,5 @@
     <a href="#" class="shop-next">Next</a>
 </div>
 
-
+@include("partials.footer")
 @endsection
