@@ -401,3 +401,145 @@ copyright,
     align-items: flex-start;
   }
 }
+
+
+/* ================= NEW FORM UPDATES (Figma changes) ================= */
+
+.enquiry-whatsapp{
+  margin: 0 0 18px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #111;
+}
+
+.enquiry-whatsapp__link{
+  color: #111;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.field-hint{
+  margin: 6px 0 0;
+  font-size: 11px;
+  color: #7a7a7a;
+}
+
+/* Measurements grid (4 columns like figma) */
+.measurements{
+  margin-top: 14px;
+}
+
+.measure-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* Upload box */
+.upload-box{
+  position: relative;
+  border: 1px dashed #bdbdbd;
+  height: 150px;
+  margin-top: 10px;
+}
+
+.upload-input{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-ui{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.upload-title{
+  font-size: 12px;
+  color: #111;
+  font-weight: 500;
+}
+
+.upload-title span{
+  text-decoration: underline;
+}
+
+.upload-sub{
+  font-size: 11px;
+  color: #777;
+  margin-top: 4px;
+}
+
+.upload-icon svg{
+  display: block;
+  opacity: 0.9;
+}
+
+.upload-ui{
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Delivery section */
+.delivery{
+  margin-top: 18px;
+}
+
+.delivery-label{
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.delivery-options{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* Pill buttons */
+.delivery-pill{
+  position: relative;
+  border: 1px solid #bdbdbd;
+  padding: 10px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}
+
+.delivery-pill input{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.delivery-pill:has(input:checked){
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .measure-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px){
+  .measure-grid{
+    grid-template-columns: 1fr;
+  }
+}

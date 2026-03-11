@@ -8,10 +8,15 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductController;
 
 
-//MY OWN ENQUIRY ROUTES
+//ENQUIRY ROUTES
 
 Route::get('/enquiry', [EnquiryController::class, 'create'])->name('enquiry.form');
 Route::post('/enquiry', [EnquiryController::class, 'store'])->name('enquiry.submit');
+
+//CART ROUTES
+Route::get('/cart', function () {
+    return view('pages.cart');
+})->name('cart');
 
 
 
