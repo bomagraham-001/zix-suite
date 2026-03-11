@@ -9,10 +9,15 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LaundryController;
 
 
-//MY OWN ENQUIRY ROUTES
+//ENQUIRY ROUTES
 
 Route::get('/enquiry', [EnquiryController::class, 'create'])->name('enquiry.form');
 Route::post('/enquiry', [EnquiryController::class, 'store'])->name('enquiry.submit');
+
+//CART ROUTES
+Route::get('/cart', function () {
+    return view('pages.cart');
+})->name('cart');
 
 
 //LAUNDRY ROUTES
